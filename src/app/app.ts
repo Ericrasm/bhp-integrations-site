@@ -16,4 +16,36 @@ export class App {
     { path: '/about/blogs', label: 'Blogs' },
     { path: '/about/careers', label: 'Careers' },
   ];
+  protected readonly openDropdown = signal<string | null>(null);
+
+  protected toggleDropdown(name: string): void {
+    this.openDropdown.update(current => (current === name ? null : name));
+  }
+
+  protected openMenu(name: string): void {
+    this.openDropdown.set(name);
+  }
+
+  protected closeMenu(name?: string): void {
+    if (!name || this.openDropdown() === name) {
+      this.openDropdown.set(null);
+    }
+  }
+
+  protected handleGroupFocusOut(event: FocusEvent, name: string): void {
+    const nextTarget = event.relatedTarget;
+
+    if (!(event.currentTarget instanceof HTMLElement) || !(nextTarget instanceof Node)) {
+      this.closeMenu(name);
+      return;
+    }
+
+    if (!event.currentTarget.contains(nextTarget)) {
+      this.closeMenu(name);
+    }
+  }
+
+  protected closeDropdown(): void {
+    this.openDropdown.set(null);
+  }
 }

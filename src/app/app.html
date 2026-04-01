@@ -14,24 +14,58 @@
     </a>
 
     <nav class="site-nav" aria-label="Primary navigation">
-      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-      <div class="site-nav__group">
-        <a routerLink="/about" routerLinkActive="is-active">About</a>
-        <div class="site-nav__dropdown">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeDropdown()">Home</a>
+      <div
+        class="site-nav__group"
+        (mouseenter)="openMenu('about')"
+        (mouseleave)="closeMenu('about')"
+        (focusin)="openMenu('about')"
+        (focusout)="handleGroupFocusOut($event, 'about')"
+      >
+        <div class="site-nav__group-head">
+          <a routerLink="/about" routerLinkActive="is-active" (click)="closeDropdown()">About</a>
+          <button
+            type="button"
+            class="site-nav__trigger"
+            [class.is-open]="openDropdown() === 'about'"
+            (click)="toggleDropdown('about')"
+            aria-label="Toggle About menu"
+          >
+            <span></span>
+          </button>
+        </div>
+        <div class="site-nav__dropdown" [class.is-open]="openDropdown() === 'about'">
           @for (link of aboutLinks; track link.path) {
-            <a [routerLink]="link.path">{{ link.label }}</a>
+            <a [routerLink]="link.path" (click)="closeDropdown()">{{ link.label }}</a>
           }
         </div>
       </div>
-      <div class="site-nav__group">
-        <a routerLink="/services" routerLinkActive="is-active">Services</a>
-        <div class="site-nav__dropdown">
+      <div
+        class="site-nav__group"
+        (mouseenter)="openMenu('services')"
+        (mouseleave)="closeMenu('services')"
+        (focusin)="openMenu('services')"
+        (focusout)="handleGroupFocusOut($event, 'services')"
+      >
+        <div class="site-nav__group-head">
+          <a routerLink="/services" routerLinkActive="is-active" (click)="closeDropdown()">Services</a>
+          <button
+            type="button"
+            class="site-nav__trigger"
+            [class.is-open]="openDropdown() === 'services'"
+            (click)="toggleDropdown('services')"
+            aria-label="Toggle Services menu"
+          >
+            <span></span>
+          </button>
+        </div>
+        <div class="site-nav__dropdown" [class.is-open]="openDropdown() === 'services'">
           @for (service of services; track service.slug) {
-            <a [routerLink]="['/services', service.slug]">{{ service.shortTitle }}</a>
+            <a [routerLink]="['/services', service.slug]" (click)="closeDropdown()">{{ service.shortTitle }}</a>
           }
         </div>
       </div>
-      <a routerLink="/contact" routerLinkActive="is-active">Contact</a>
+      <a routerLink="/contact" routerLinkActive="is-active" (click)="closeDropdown()">Contact</a>
       <a
         class="site-nav__cta"
         href="mailto:operations@bhpintegrations.com?subject=Invoice%20Payment%20Request"

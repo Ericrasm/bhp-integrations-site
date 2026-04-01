@@ -65,10 +65,17 @@
 .site-nav__group {
   display: inline-flex;
   align-items: center;
+  flex-direction: column;
   position: relative;
 }
 
-.site-nav__group > a {
+.site-nav__group-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.site-nav__group-head > a {
   display: inline-flex;
   align-items: center;
 }
@@ -79,6 +86,38 @@
   padding: 0.65rem 1rem;
   text-decoration: none;
   transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.site-nav__trigger {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  height: 2.4rem;
+  justify-content: center;
+  padding: 0;
+  width: 2.4rem;
+}
+
+.site-nav__trigger span {
+  border-bottom: 2px solid var(--text-inverse-muted);
+  border-right: 2px solid var(--text-inverse-muted);
+  display: block;
+  height: 0.55rem;
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 160ms ease, border-color 160ms ease;
+  width: 0.55rem;
+}
+
+.site-nav__trigger.is-open span {
+  transform: rotate(-135deg) translateX(-1px);
+}
+
+.site-nav__trigger:hover span,
+.site-nav__trigger:focus-visible span {
+  border-color: var(--text-inverse);
 }
 
 .site-nav__dropdown {
@@ -107,7 +146,8 @@
 }
 
 .site-nav__group:hover .site-nav__dropdown,
-.site-nav__group:focus-within .site-nav__dropdown {
+.site-nav__group:focus-within .site-nav__dropdown,
+.site-nav__dropdown.is-open {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
@@ -176,12 +216,19 @@
 }
 
 @media (max-width: 960px) {
+  .site-header {
+    position: static;
+    top: auto;
+  }
+
   .site-header__content {
     align-items: flex-start;
     flex-direction: column;
   }
 
   .site-nav {
+    align-items: stretch;
+    width: 100%;
     justify-content: flex-start;
   }
 
@@ -189,16 +236,31 @@
     width: 100%;
   }
 
-  .site-nav__dropdown {
-    margin-top: 0.35rem;
-    min-width: 100%;
-    position: static;
-    transform: none;
+  .site-nav__group-head {
+    justify-content: space-between;
+    width: 100%;
   }
 
-  .site-nav__group:hover .site-nav__dropdown,
-  .site-nav__group:focus-within .site-nav__dropdown {
+  .site-nav__dropdown {
+    max-height: 0;
+    margin-top: 0.35rem;
+    min-width: 100%;
+    opacity: 0;
+    overflow: hidden;
+    padding-bottom: 0;
+    padding-top: 0;
+    pointer-events: none;
+    position: static;
+    transform: none;
+    transition: opacity 160ms ease, max-height 160ms ease, padding 160ms ease;
+  }
+
+  .site-nav__dropdown.is-open {
+    max-height: 24rem;
     opacity: 1;
+    padding-bottom: 0.55rem;
+    padding-top: 0.55rem;
+    pointer-events: auto;
   }
 
   .site-footer__content {
