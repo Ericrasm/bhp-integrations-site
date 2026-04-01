@@ -1,0 +1,60 @@
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__panel">
+      <div class="page-hero__copy">
+        <p class="section-kicker">About BHP</p>
+        <h1 class="section-title">A Northern California integrator built around trust, responsiveness, and disciplined execution.</h1>
+        <p class="section-copy">
+          BHP Electrical Integrations is a Service-Disabled Veteran Owned Small Business specializing in low voltage, physical security, surveillance, and alarm projects for government, industrial, and commercial clients.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container about-grid">
+    <article class="card">
+      <p class="section-kicker">How We Work</p>
+      <h2>Projects start with communication and end with a system teams can actually use.</h2>
+      <p>
+        BHP's messaging emphasizes open communication, relationship-driven delivery, and support from planning through a fully functional system. That approach carries through every engagement, whether the scope is a single upgrade or a multi-phase rollout.
+      </p>
+      <div class="button-row">
+        <a class="button-primary" routerLink="/services">Explore services</a>
+        <a class="button-secondary" routerLink="/contact">Start a conversation</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <p class="section-kicker">Markets</p>
+      <ul class="about-list">
+        @for (industry of industries; track industry) {
+          <li>{{ industry }}</li>
+        }
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container about-columns">
+    <article class="card">
+      <p class="section-kicker">Company Snapshot</p>
+      <ul class="about-list">
+        @for (item of companySnapshot; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </article>
+
+    <article class="card">
+      <p class="section-kicker">Differentiators</p>
+      <ul class="about-list">
+        @for (item of differentiators; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </article>
+  </div>
+</section>

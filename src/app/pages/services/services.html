@@ -1,0 +1,72 @@
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__panel">
+      <div class="page-hero__copy">
+        <p class="section-kicker">Services</p>
+        <h1 class="section-title">Four focused service lines, each with a clearer path to understanding scope and fit.</h1>
+        <p class="section-copy">
+          This page follows the same idea you liked in the reference site: concise service entry points, direct descriptions, and quick links into more detailed pages. The difference is that the messaging is rooted in BHP's actual published offerings.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container services-grid">
+    <div class="card subpages-panel">
+      <div class="subpages-panel__header">
+        <div>
+          <p class="section-kicker">Service Subpages</p>
+          <h2>Each service has its own page.</h2>
+        </div>
+        <p>Choose a service below to open its dedicated subpage.</p>
+      </div>
+
+      <div class="subpages-panel__links">
+        @for (service of services; track service.slug) {
+          <a class="subpages-panel__link" [routerLink]="['/services', service.slug]">
+            <strong>{{ service.shortTitle }}</strong>
+            <span>/services/{{ service.slug }}</span>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--compact">
+  <div class="container services-grid">
+    @for (service of services; track service.slug) {
+      <article class="card service-card">
+        <p class="service-card__eyebrow">{{ service.shortTitle }}</p>
+        <h2>{{ service.title }}</h2>
+        <p>{{ service.description }}</p>
+
+        <ul class="service-card__list">
+          @for (capability of service.capabilities.slice(0, 3); track capability) {
+            <li>{{ capability }}</li>
+          }
+        </ul>
+
+        <a class="button-primary" [routerLink]="['/services', service.slug]">Open service page</a>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="card support-panel">
+      <div>
+        <p class="section-kicker">Need Help Scoping A Project?</p>
+        <h2>Talk through an installation, retrofit, or expansion with BHP.</h2>
+      </div>
+
+      <div class="button-row">
+        <a class="button-primary" routerLink="/contact">Contact BHP</a>
+        <a class="button-secondary" routerLink="/about">Review credentials</a>
+      </div>
+    </div>
+  </div>
+</section>

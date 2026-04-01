@@ -1,0 +1,176 @@
+<section class="hero">
+  <div class="container">
+    <div
+      class="hero__stage"
+      style="min-height: 42rem; position: relative; overflow: hidden; border-radius: 32px; box-shadow: 0 24px 60px rgba(8, 25, 39, 0.12); background: #0b1723;"
+    >
+      <img
+        class="hero__backdrop"
+        src="hero-fire-alarm-technician-v2.jpg"
+        alt=""
+        aria-hidden="true"
+        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; z-index: 0;"
+      >
+      <div
+        class="hero__layout"
+        style="position: absolute; inset: 0; z-index: 2; background: linear-gradient(90deg, rgba(7, 22, 36, 0.74) 0%, rgba(7, 22, 36, 0.42) 42%, rgba(7, 22, 36, 0.16) 100%);"
+      ></div>
+      <div
+        class="hero__layout"
+        style="position: relative; min-height: 42rem; z-index: 3; padding: clamp(1.5rem, 4vw, 3rem);"
+      >
+        <div
+          class="hero__copy"
+          style="position: absolute; top: 2rem; bottom: 2rem; left: clamp(1.5rem, 4vw, 3rem); width: min(900px, calc(100% - 4.5rem)); border-radius: 28px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(145deg, rgba(7, 22, 36, 0.78), rgba(15, 37, 56, 0.58)); backdrop-filter: blur(10px);"
+        >
+          <div
+            class="hero__content"
+            style="display: grid; align-content: start; gap: 1.15rem; justify-items: start; max-width: 100%; min-height: 100%; padding: clamp(1.6rem, 3vw, 2.8rem); position: relative; z-index: 3;"
+          >
+            <span class="eyebrow-pill">Bringing Higher Power To You</span>
+            <h1 style="font-size: clamp(2rem, 2.9vw, 3.35rem); line-height: 1.08; margin: 0; max-width: 16ch;">
+              Enterprise security, networking, surveillance, and fire alarm systems and monitoring by our team of certified professionals.
+            </h1>
+            <p style="font-size: 1.02rem; line-height: 1.65; margin: 0; max-width: 60ch;">
+              Built around BHP's low-voltage, security, surveillance, and alarm capabilities, the home page now leads with a more immersive field-services presentation while keeping direct paths into each offering.
+            </p>
+
+            <div class="button-row">
+              <a class="button-primary" routerLink="/services">View services</a>
+              <a
+                class="button-secondary"
+                routerLink="/contact"
+                style="background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.34); color: #f3f8fb;"
+              >
+                Get in touch
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--snapshot">
+  <div class="container">
+    <div class="hero__panel hero__panel--below">
+      <div>
+        <p class="section-kicker">Company Snapshot</p>
+        <ul class="check-list">
+          @for (item of companySnapshot; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="hero__contact">
+        <span>Call</span>
+        <a href="tel:9256653434">(925) 665-3434</a>
+        <span>Email</span>
+        <a href="mailto:operations@bhpintegrations.com">operations@bhpintegrations.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--intro">
+  <div class="container intro-grid">
+    <div>
+      <p class="section-kicker">About Us</p>
+      <h2 class="section-title">A relationship-first integrator with an end-to-end project mindset.</h2>
+      <p class="section-copy">
+        BHP Electrical Integrations emphasizes open communication, strong values, and a comprehensive approach to projects. From drawings and planning through a fully functional system, the goal is to make each engagement feel clear, accountable, and well-supported.
+      </p>
+    </div>
+
+    <div class="card-grid intro-grid__cards">
+      @for (item of differentiators; track item) {
+        <article class="card info-card">
+          <h3>{{ item }}</h3>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--services">
+  <div class="container">
+    <p class="section-kicker">Services</p>
+    <div class="services-header">
+      <div>
+        <h2 class="section-title">Clear pathways into each service area.</h2>
+        <p class="section-copy">
+          Following the reference-site pattern you liked, each BHP offering is broken into a focused page so visitors can quickly understand scope, fit, and next steps.
+        </p>
+      </div>
+      <a class="button-secondary" routerLink="/services">See all services</a>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services; track service.slug) {
+        <article class="card service-card">
+          <p class="service-card__eyebrow">{{ service.shortTitle }}</p>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.summary }}</p>
+          <a class="inline-link" [routerLink]="['/services', service.slug]">Explore service</a>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container markets-grid">
+    <article class="card process-card">
+      <p class="section-kicker">Project Flow</p>
+      <h2>From drawings and planning to a fully functional system.</h2>
+      <div class="process-steps">
+        <div>
+          <strong>01</strong>
+          <span>Scope and site understanding</span>
+        </div>
+        <div>
+          <strong>02</strong>
+          <span>System design coordination</span>
+        </div>
+        <div>
+          <strong>03</strong>
+          <span>Installation and field execution</span>
+        </div>
+        <div>
+          <strong>04</strong>
+          <span>Turnover, training, and support</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="card markets-card">
+      <p class="section-kicker">Markets Served</p>
+      <ul class="markets-list">
+        @for (industry of industries; track industry) {
+          <li>{{ industry }}</li>
+        }
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-panel">
+      <div>
+        <p class="section-kicker">Contact</p>
+        <h2 class="section-title">Need a partner for a low-voltage or security project?</h2>
+        <p class="section-copy">
+          Reach out with a site need, a design question, or a project already in motion. BHP's published contact information and licensing details are built directly into the experience so the next step is always easy to find.
+        </p>
+      </div>
+
+      <div class="button-row">
+        <a class="button-primary" routerLink="/contact">Contact BHP</a>
+        <a class="button-secondary" routerLink="/about">View credentials</a>
+      </div>
+    </div>
+  </div>
+</section>

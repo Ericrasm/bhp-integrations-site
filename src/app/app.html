@@ -1,0 +1,72 @@
+<div class="topbar">
+  <div class="container topbar__content">
+    <a href="tel:9256653434">(925) 665-3434</a>
+    <a href="mailto:operations@bhpintegrations.com">operations@bhpintegrations.com</a>
+    <span>428 N Buchanan Cir #10, Pacheco, CA 94553</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container site-header__content">
+    <a class="brand" routerLink="/">
+      <span class="brand__eyebrow">BHP Electrical Integrations</span>
+      <span class="brand__title">Integrated low-voltage and security systems</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <div class="site-nav__group">
+        <a routerLink="/about" routerLinkActive="is-active">About</a>
+        <div class="site-nav__dropdown">
+          @for (link of aboutLinks; track link.path) {
+            <a [routerLink]="link.path">{{ link.label }}</a>
+          }
+        </div>
+      </div>
+      <div class="site-nav__group">
+        <a routerLink="/services" routerLinkActive="is-active">Services</a>
+        <div class="site-nav__dropdown">
+          @for (service of services; track service.slug) {
+            <a [routerLink]="['/services', service.slug]">{{ service.shortTitle }}</a>
+          }
+        </div>
+      </div>
+      <a routerLink="/contact" routerLinkActive="is-active">Contact</a>
+      <a
+        class="site-nav__cta"
+        href="mailto:operations@bhpintegrations.com?subject=Invoice%20Payment%20Request"
+      >
+        Pay Invoice
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__content">
+    <div>
+      <p class="site-footer__title">BHP Electrical Integrations</p>
+      <p>Service-Disabled Veteran Owned Small Business serving government, industrial, and commercial clients across Northern California.</p>
+    </div>
+
+    <div>
+      <p class="site-footer__title">Core Services</p>
+      <a routerLink="/services/low-voltage">Low Voltage</a>
+      <a routerLink="/services/physical-security">Physical Security</a>
+      <a routerLink="/services/surveillance">Surveillance</a>
+      <a routerLink="/services/alarms">Alarms</a>
+    </div>
+
+    <div>
+      <p class="site-footer__title">Credentials</p>
+      <p>CA License #1073589</p>
+      <p>ACO License #7999</p>
+      <p>SB/DVBE Certified #2023959</p>
+      <p>SAM UEI: KBR9RME864R8</p>
+    </div>
+  </div>
+</footer>

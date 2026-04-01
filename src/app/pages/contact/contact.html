@@ -1,0 +1,61 @@
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__panel">
+      <div class="page-hero__copy">
+        <p class="section-kicker">Contact</p>
+        <h1 class="section-title">Bring a project, site need, or service question to BHP.</h1>
+        <p class="section-copy">
+          The original BHP site centers contact as a major conversion point. This version keeps that intent, but presents the information with clearer calls to action and direct paths back into the relevant service pages.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <article class="card contact-card contact-card--dark">
+      <p class="section-kicker">Reach Out</p>
+      <a class="contact-card__link" href="tel:9256653434">(925) 665-3434</a>
+      <a class="contact-card__link" href="mailto:operations@bhpintegrations.com">operations@bhpintegrations.com</a>
+      <p>428 N Buchanan Cir #10<br>Pacheco, CA 94553</p>
+
+      <div class="contact-card__badges">
+        <span>CA License #1073589</span>
+        <span>ACO #7999</span>
+        <span>SB/DVBE #2023959</span>
+      </div>
+    </article>
+
+    <article class="card contact-card">
+      <p class="section-kicker">Best For</p>
+      <h2>Use this page when you already know the outcome you need.</h2>
+      <ul class="contact-list">
+        <li>Planning a new low-voltage or network infrastructure project</li>
+        <li>Upgrading access control, CCTV, or alarm coverage</li>
+        <li>Coordinating a retrofit, expansion, or phased installation</li>
+        <li>Requesting credentials and company information for procurement</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="card service-links">
+      <div>
+        <p class="section-kicker">Service Shortcuts</p>
+        <h2>Jump into the area closest to your project.</h2>
+      </div>
+
+      <div class="service-links__grid">
+        @for (service of services; track service.slug) {
+          <a class="service-links__item" [routerLink]="['/services', service.slug]">
+            <strong>{{ service.shortTitle }}</strong>
+            <span>{{ service.summary }}</span>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</section>

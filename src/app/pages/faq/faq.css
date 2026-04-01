@@ -1,0 +1,40 @@
+.faq-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card h2 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.2;
+  margin: 0 0 0.9rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.section--tight {
+  padding-top: 0;
+}
+
+.faq-cta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

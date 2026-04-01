@@ -1,0 +1,60 @@
+.about-grid,
+.about-columns {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.about-grid {
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+}
+
+.about-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.section--tight {
+  padding-top: 0;
+}
+
+.card h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.about-list {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+}
+
+.about-list li {
+  color: var(--text);
+  list-style: none;
+  padding-left: 1.3rem;
+  position: relative;
+}
+
+.about-list li::before {
+  background: var(--accent);
+  border-radius: 999px;
+  content: "";
+  height: 0.45rem;
+  left: 0;
+  position: absolute;
+  top: 0.65rem;
+  width: 0.45rem;
+}
+
+@media (max-width: 900px) {
+  .about-grid,
+  .about-columns {
+    grid-template-columns: 1fr;
+  }
+}

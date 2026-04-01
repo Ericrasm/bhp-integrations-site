@@ -1,0 +1,84 @@
+@if (service(); as currentService) {
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__panel">
+        <div class="page-hero__copy">
+          <p class="section-kicker">Service Detail</p>
+          <h1 class="section-title">{{ currentService.title }}</h1>
+          <p class="section-copy">{{ currentService.description }}</p>
+          <div class="button-row">
+            <a class="button-primary" routerLink="/contact">Talk to BHP</a>
+            <a class="button-secondary" routerLink="/services">Back to all services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-grid">
+      <article class="card">
+        <p class="section-kicker">Overview</p>
+        <h2>{{ currentService.highlight }}</h2>
+        <p>{{ currentService.summary }}</p>
+
+        <p class="section-kicker section-kicker--spaced">Capabilities</p>
+        <ul class="detail-list">
+          @for (item of currentService.capabilities; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="section-kicker">Project Outcomes</p>
+        <ul class="detail-list">
+          @for (item of currentService.outcomes; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+
+        <p class="section-kicker section-kicker--spaced">Best Fit</p>
+        <ul class="detail-list">
+          @for (item of currentService.applications; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="detail-services card">
+        <div>
+          <p class="section-kicker">Explore More</p>
+          <h2>Related BHP service lines</h2>
+        </div>
+
+        <div class="detail-services__links">
+          @for (item of siblingServices; track item.slug) {
+            <a
+              class="detail-services__link"
+              [class.is-current]="item.slug === currentService.slug"
+              [routerLink]="['/services', item.slug]"
+            >
+              <strong>{{ item.shortTitle }}</strong>
+              <span>{{ item.summary }}</span>
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+} @else {
+  <section class="section">
+    <div class="container">
+      <div class="card detail-empty">
+        <h1>Service not found</h1>
+        <p>The requested service page could not be found.</p>
+        <a class="button-primary" routerLink="/services">View all services</a>
+      </div>
+    </div>
+  </section>
+}
