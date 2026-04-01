@@ -1,4 +1,5 @@
 :root {
+  --text-inverse-muted: rgba(255, 255, 255, 0.78);
   --bg: #f4f7f8;
   --bg-deep: #dce9ee;
   --surface: #ffffff;

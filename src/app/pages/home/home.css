@@ -18,8 +18,9 @@
   border-radius: 32px;
   box-shadow: var(--shadow);
   min-height: 42rem;
-  overflow: hidden;
+
   position: relative;
+  overflow: hidden; /* keep for image mask */
 }
 
 .hero__backdrop {
@@ -38,14 +39,20 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 75% 22%, rgba(44, 184, 223, 0.18), transparent 18rem),
-    linear-gradient(90deg, rgba(7, 22, 36, 0.74) 0%, rgba(7, 22, 36, 0.42) 42%, rgba(7, 22, 36, 0.16) 100%);
+    radial-gradient(circle at 70% 20%, rgba(44, 184, 223, 0.2), transparent 20rem),
+    linear-gradient(90deg, rgba(7, 22, 36, 0.85), rgba(7, 22, 36, 0.35));
   pointer-events: none;
   z-index: 1;
 }
 
 .hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 720px) 1fr;
+  align-items: center;
+
   min-height: 42rem;
+  padding: clamp(2rem, 5vw, 4rem);
+
   position: relative;
   z-index: 2;
 }
@@ -57,19 +64,32 @@
 }
 
 .hero__copy {
-  backdrop-filter: blur(10px);
-  background: linear-gradient(145deg, rgba(7, 22, 36, 0.78), rgba(15, 37, 56, 0.58));
+  backdrop-filter: blur(12px);
+  background: linear-gradient(
+    145deg,
+    rgba(7, 22, 36, 0.82),
+    rgba(15, 37, 56, 0.62)
+  );
+
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
+
   display: flex;
   align-items: center;
-  left: clamp(1.5rem, 4vw, 3rem);
-  max-width: min(720px, calc(100% - 3rem));
+
+  max-width: 680px;
+  width: 100%;
+
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+
+  position: relative;
   overflow: hidden;
-  min-height: auto;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.35),
+    inset 0 1px rgba(255, 255, 255, 0.04);
+
+  z-index: 3;
 }
 
 .hero__copy::after,
@@ -112,12 +132,8 @@
 
 .hero__content {
   display: grid;
-  gap: 1.1rem;
-  justify-items: start;
-  max-width: min(620px, 100%);
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  position: relative;
-  z-index: 3;
+  gap: 1.25rem;
+  max-width: 560px;
 }
 
 .hero__copy > * {
@@ -126,24 +142,22 @@
 }
 
 .hero__copy h1 {
-  font-size: clamp(1.9rem, 2.8vw, 3rem);
-  line-height: 1.08;
-  margin: 0;
-  max-width: 16ch;
-  text-wrap: pretty;
+  font-size: clamp(2.2rem, 3vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.hero__copy p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.9;
 }
 
 .hero__copy p,
 .hero__contact span {
-  color: var(--text-inverse-muted);
+  color: rgba(255, 255, 255, 0.78);
 }
 
-.hero__copy p {
-  font-size: 0.98rem;
-  line-height: 1.65;
-  margin: 0;
-  max-width: 56ch;
-}
 
 .hero__copy .button-secondary {
   background: rgba(255, 255, 255, 0.1);
@@ -372,19 +386,17 @@
   }
 
   .hero__layout {
+    grid-template-columns: 1fr;   /* 🔥 important for your new grid */
     min-height: auto;
-    padding: 1.25rem;
+    padding: 1.5rem;
   }
 
   .hero__copy {
-    left: auto;
     max-width: 100%;
-    position: relative;
-    top: auto;
-    bottom: auto;
-    transform: none;
     width: 100%;
+    margin: 0;
   }
+}
 
   .services-header {
     align-items: start;
