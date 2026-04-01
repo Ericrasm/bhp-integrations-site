@@ -66,6 +66,8 @@
   display: inline-flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: -0.7rem;
+  padding-bottom: 0.7rem;
   position: relative;
 }
 
@@ -216,6 +218,11 @@
 }
 
 @media (max-width: 960px) {
+  .site-nav__group {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
   .site-header {
     position: static;
     top: auto;
