@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BhpSite
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.5.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# bhp-integrations-site
+Test Site for BHP Integrations
+>>>>>>> cc3f31b1c6d2ae22e26c6422c3e9bdb30674438d
