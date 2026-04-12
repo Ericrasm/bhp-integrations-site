@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact BHP Electrical Integrations for a free quote on security, low voltage, surveillance, or electrical services in Northern California." />
+  <title>Contact Us | BHP Electrical Integrations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="BHP Electrical Integrations home">
+        <div class="logo-icon" aria-hidden="true">BHP</div>
+        <div class="logo-text">BHP <span>Integrations</span></div>
+      </a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="btn-nav-cta">Get a Quote</a></li>
+      </ul>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero" aria-labelledby="contact-hero-heading">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fas fa-chevron-right" aria-hidden="true" style="font-size:0.65rem;"></i>
+          <span>Contact</span>
+        </nav>
+        <h1 id="contact-hero-heading">Get In Touch</h1>
+        <p>Ready to secure your facility? Reach out for a free consultation and custom quote from our expert team.</p>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION
+         ============================================ -->
+    <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="section-inner">
+        <div class="contact-grid">
+          <!-- Left: Info -->
+          <div class="contact-info">
+            <h2 id="contact-heading" style="font-size:1.5rem;font-weight:800;color:var(--text-dark);margin-bottom:1rem;">Let's Talk About Your Project</h2>
+            <p>Whether you need a single access control door or a complete enterprise security system, our team is ready to help. Fill out the form and we'll respond within one business day.</p>
+
+            <div class="contact-details" role="list">
+              <div class="contact-detail-item" role="listitem">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="fas fa-phone"></i></div>
+                <div class="contact-detail-content">
+                  <h5>Phone</h5>
+                  <a href="tel:+1-916-555-0100">(916) 555-0100</a>
+                </div>
+              </div>
+              <div class="contact-detail-item" role="listitem">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+                <div class="contact-detail-content">
+                  <h5>Email</h5>
+                  <a href="mailto:info@bhpintegrations.com">info@bhpintegrations.com</a>
+                </div>
+              </div>
+              <div class="contact-detail-item" role="listitem">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="contact-detail-content">
+                  <h5>Location</h5>
+                  <p>Clayton, California<br />Serving Greater Northern California</p>
+                </div>
+              </div>
+              <div class="contact-detail-item" role="listitem">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
+                <div class="contact-detail-content">
+                  <h5>Business Hours</h5>
+                  <p>Monday – Friday: 7:00 AM – 5:00 PM PST<br />Saturday: By appointment</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map placeholder -->
+            <div class="map-placeholder" role="img" aria-label="Map of Northern California service area">
+              <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+              <p>Northern California Service Area</p>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div class="contact-form-wrap">
+            <h3>Request a Free Quote</h3>
+            <form id="contactForm" novalidate aria-labelledby="contact-form-heading">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="firstName" name="firstName" placeholder="John" required autocomplete="given-name" />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Smith" required autocomplete="family-name" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="john@company.com" required autocomplete="email" />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="(916) 555-0100" autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company / Organization</label>
+                <input type="text" id="company" name="company" placeholder="Company Name" autocomplete="organization" />
+              </div>
+
+              <div class="form-group">
+                <label for="service">Service of Interest <span aria-hidden="true">*</span></label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="low-voltage">Low Voltage / Network Cabling</option>
+                  <option value="access-control">Physical Security / Access Control</option>
+                  <option value="surveillance">Surveillance / CCTV Systems</option>
+                  <option value="alarms">Alarm Systems (Fire / Burglar)</option>
+                  <option value="electrical">General Electrical Services</option>
+                  <option value="consulting">Project Consulting</option>
+                  <option value="multiple">Multiple Services</option>
+                  <option value="other">Other / Not Sure</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="projectType">Project Type</label>
+                <select id="projectType" name="projectType">
+                  <option value="" disabled selected>Select project type…</option>
+                  <option value="new-construction">New Construction</option>
+                  <option value="retrofit">Retrofit / Upgrade</option>
+                  <option value="repair">Repair / Maintenance</option>
+                  <option value="consultation">Consultation Only</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Project Details <span aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" placeholder="Tell us about your project — facility type, size, specific requirements, timeline, etc." required></textarea>
+              </div>
+
+              <button type="submit" class="form-submit">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         WHY CONTACT US
+         ============================================ -->
+    <section class="section" style="background:var(--bg-white);padding-top:0;" aria-labelledby="why-contact-heading">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-badge"><i class="fas fa-award" aria-hidden="true"></i> What to Expect</div>
+          <h2 class="section-title" id="why-contact-heading">The BHP Difference</h2>
+          <p class="section-subtitle">When you contact BHP Integrations, you're partnering with a team that's as committed to your project's success as you are.</p>
+        </div>
+
+        <div class="services-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+          <div class="service-card reveal" style="text-align:center;">
+            <div class="service-icon" aria-hidden="true" style="margin:0 auto 1.25rem;"><i class="fas fa-bolt"></i></div>
+            <h3>Fast Response</h3>
+            <p>We respond to all inquiries within one business day. For urgent needs, call us directly and we'll prioritize your request.</p>
+          </div>
+          <div class="service-card reveal" style="text-align:center;">
+            <div class="service-icon" aria-hidden="true" style="margin:0 auto 1.25rem;"><i class="fas fa-dollar-sign"></i></div>
+            <h3>Free Assessment</h3>
+            <p>No obligation site assessment and quote — we invest our time upfront to make sure we recommend exactly what you need.</p>
+          </div>
+          <div class="service-card reveal" style="text-align:center;">
+            <div class="service-icon" aria-hidden="true" style="margin:0 auto 1.25rem;"><i class="fas fa-file-contract"></i></div>
+            <h3>Transparent Pricing</h3>
+            <p>Our proposals are clear, detailed, and free of hidden fees. You'll know exactly what you're getting and what it costs.</p>
+          </div>
+          <div class="service-card reveal" style="text-align:center;">
+            <div class="service-icon" aria-hidden="true" style="margin:0 auto 1.25rem;"><i class="fas fa-headset"></i></div>
+            <h3>Ongoing Support</h3>
+            <p>Our relationship doesn't end at project completion. We provide training, documentation, and post-installation support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" aria-label="BHP Electrical Integrations home">
+          <div class="logo-icon" aria-hidden="true">BHP</div>
+          <div class="logo-text">BHP <span>Integrations</span></div>
+        </a>
+        <p>Service-Disabled Veteran Owned Small Business providing security and low voltage solutions throughout Northern California.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul role="list">
+          <li><a href="services.html#low-voltage">Low Voltage Solutions</a></li>
+          <li><a href="services.html#security">Physical Security</a></li>
+          <li><a href="services.html#surveillance">Surveillance Systems</a></li>
+          <li><a href="services.html#alarms">Alarm Systems</a></li>
+          <li><a href="services.html#electrical">General Electrical</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul role="list">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#certifications">Certifications</a></li>
+          <li><a href="about.html#industries">Industries Served</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul role="list">
+          <li><a href="mailto:info@bhpintegrations.com">info@bhpintegrations.com</a></li>
+          <li><a href="tel:+1-916-555-0100">(916) 555-0100</a></li>
+          <li><a href="#">Northern California</a></li>
+          <li><a href="#">Mon–Fri, 7am–5pm PST</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <p>&copy; <span id="footerYear">2025</span> BHP Electrical Integrations (BHP Requiem, Inc.). All rights reserved.</p>
+        <div class="footer-license-badges" aria-label="License information">
+          <span class="footer-license-badge">C-10 Lic.</span>
+          <span class="footer-license-badge">SDVOSB</span>
+          <span class="footer-license-badge">OSHA 30</span>
+          <span class="footer-license-badge">ISN Certified</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('footerYear').textContent = new Date().getFullYear();</script>
+</body>
+</html>
